@@ -16,14 +16,22 @@ class Appointment < ApplicationRecord
     end
   end 
 
-  def self.upcoming_appointments
-    appointments.order(desired_date: :desc).select { |a| a.desired_date > (DateTime.now) }
-  end
-
   scope :alpha, -> { order(:desired_time) }
+  #scope :most_reviews, -> {left_joins(:reviews).group('appointments.id').order('count(reviews.appointment_id) desc')}
 
   def appointment_count
     @appointment_count ||= appointments.count
+  end
+
+
+  def one_review_per_appointment
+    today_review = client.reviews.select do |p|
+      p.created_at.try(:to_date) == Date.today
+    end
+
+    if today_review.size > 1
+      errors.add(:review_id, " your only required to write one review per appoinment.")
+    end
   end
 
 end
