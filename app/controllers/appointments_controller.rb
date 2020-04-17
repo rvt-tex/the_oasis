@@ -7,13 +7,13 @@ class AppointmentsController < ApplicationController
         client = Client.find_by(id:params[:client_id])
       if current_client == client
         #binding.pry
-        @appointments = client.appointments
+        @appointments = client.appointments.alpha
       else
         flash[:alert] = "Client not found."
         redirect_to clients_path
       end
       else
-        @appointments = Appointment.all
+        @appointments = Appointment.all.alpha.includes(:client, :treatment)
       end
     end
 

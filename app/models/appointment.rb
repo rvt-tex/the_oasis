@@ -16,7 +16,7 @@ class Appointment < ApplicationRecord
     end
   end 
 
-  scope :alpha, -> { order(:desired_time) }
+  scope :alpha, -> { order(:desired_date) }
   #scope :most_reviews, -> {left_joins(:reviews).group('appointments.id').order('count(reviews.appointment_id) desc')}
 
   def appointment_count
