@@ -1,9 +1,4 @@
  
- 
-<% if @appointment %>
-  <h2>Reviews for <%= @appointment.treatment.title%></h2>
-<% else %>
-
   <%= render 'layouts/main_container'%>
     <h2 class="card-title mt-3 text-center">All Reviews</h2>
       <ul>
@@ -19,5 +14,4 @@
         <%= link_to "Write a Review »", new_review_path %>
       </div>
   <%= render 'layouts/main_container_footer'%>
-  
-<% end %>
+

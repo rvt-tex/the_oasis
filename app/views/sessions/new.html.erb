@@ -1,34 +1,25 @@
-<br><br><br>
 
-    <%= content_tag :div, class:"col-lg-5 col-xl-6" do %>
-        <%= flash[:message]  if flash[:message]%>
-    <% end %>
+<%= content_tag :div, class:"col-lg-5 col-xl-6" do %>
+    <%= flash[:message]  if flash[:message]%>
+<% end %>
 
-
-
-<div class="container mt-5">
-    <div class="card bg-info">
-        <article class="card-body mx-auto" style="max-width: 400px;">
-            
-            <h4 class="card-title mt-3 text-center">Login Page</h4>
-            <p>
-                <a href="/auth/google_oauth2" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Login via Google</a>
-            </p>
-            <p>OR</p>
-
-          
-       
-            <%= form_for :client do %>
-            <div class="form-group input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                 </div>
+<%= render 'layouts/main_login_container'%>
+    <h4 class="card-title mt-3 text-center">Login Page</h4>
+        <p>
+            <a href="/auth/google_oauth2" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Login via Google</a>
+        </p>
+        
+        <p>OR</p>
+    
+        <%= form_for :client do %>
+            <%= render 'layouts/div_form_group'%>
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+            </div>
                 <input id="client_email" name="client[email]" class="form-control" placeholder="Email Address" type="email">
             </div> 
-            <div class="form-group input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                </div>
+        <%= render 'layouts/div_form_group'%>
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
                 <input id="client_password" name="client[password]" class="form-control" placeholder="password" type="password">
             </div>
             <div class="form-group">
@@ -36,6 +27,5 @@
             </div>
                 <p class="text-center">Dont have an Account? <%= link_to "Register", register_path %></p>                                                                
             <% end %>
-        </article>
-    </div>
-</div>
+
+<%= render 'layouts/main_container_footer'%>
