@@ -1,0 +1,8 @@
+
+ <%= render 'layouts/main_container'%>
+          <h2 class="card-title mt-3 text-center">Edit Review</h2>
+            
+            <%= render partial: "layouts/errors", locals: {object: @review} %>
+            <%= render partial: "form", locals: {review: @review} %>
+
+     <%= render 'layouts/main_container_footer'%>

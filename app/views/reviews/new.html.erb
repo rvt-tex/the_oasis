@@ -1,0 +1,12 @@
+  <% if @review.appointment %>
+    <h2>New Review for <%= @review.appointment.treatment %>!</h2>
+  <% else %>
+
+   <%= render 'layouts/main_container'%>
+          <h2 class="card-title mt-3 text-center">New Review</h2>
+
+            <%= render partial: "layouts/errors", locals: {object: @review} %>
+            <%= render partial: "form", locals: {review: @review} %>
+
+      <%= render 'layouts/main_container_footer'%>
+  <% end %>
