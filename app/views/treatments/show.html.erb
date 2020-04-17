@@ -1,0 +1,36 @@
+
+<div class="container">
+        <div class="row">
+            <ul>
+                <h4><%= @treatment.title %></h4> <br>
+                <%= @treatment.price %> |
+                <%= @treatment.duration %> <br>
+                <%= @treatment.description %> <br><br><br>
+                <%= image_tag '/assets/treat_baner.jpg' %>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <a class="btn btn-secondary" <%= link_to "Book a Appointment »", new_appointment_path %></a>
+            </div>
+        </div>
+    </div>
+<br>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="/assets/salt_facial.jpg" class="float-left" alt="Paris" width="390" height="300"> 
+            </div>
+            <div class="col-sm-4">
+                <img src="/assets/lashes_2.jpeg" class="float-right" width="450" height="300">
+            </div>
+            <div class="col-sm-4">
+                <img src="/assets/sand.jpg" class="float-right" alt="Paris" width="400" height="300">
+            </div>
+        </div>
+    </div>
+
+    

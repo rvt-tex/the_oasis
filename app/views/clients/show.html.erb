@@ -4,7 +4,7 @@
   
     <%= render 'layouts/main_container'%>
                 <h2 class="card-title mt-3 text-center"><%= current_client.first_name %></h2>
-                <h3><%= display_appointments %></h3>
+                <%# <h3><%= display_appointments %></h3> %>
                 
                     <ul>
                         <% @client.appointments.each do |appointment| %>

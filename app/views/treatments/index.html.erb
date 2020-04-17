@@ -1,0 +1,53 @@
+   <div class="container">
+        <div class="row justify-content-center">
+            <h1>OUR TREATMENTS</h1>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <% Treatment.all.each do |treatment| %>
+                <ul>
+                    <%= link_to treatment.title, treatment_path(treatment) %></a>
+                </ul>
+            <% end %>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="/assets/massage.jpg" class="float-left" alt="Paris" width="390" height="300"> 
+            </div>
+            <div class="col-sm-4">
+                <img src="/assets/wood_therapy.jpeg" class="float-right" width="450" height="300">
+            </div>
+            <div class="col-sm-4">
+                <img src="/assets/facial_1.jpeg" class="float-right" alt="Paris" width="400" height="300">
+            </div>
+        </div>
+    </div>
+<br>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <img src="/assets/spa_tub.JPG" class="mx-auto d-block" style="width:50%">
+            <h4></h4>
+            <p>Exclusive beauty and wellness, treatments with trusted hands bring locals together for the most lux lifestyle trends.</p>
+            <p> Our handcrafted practices, focuses on the healing properties of Sea, Salt, Sand, and Sound.
+                Sea promises an escape from reality with blue mineral oils that help muscles relax and heal.
+                Salt balances energy with well-being properties that calm nerves and soothe muscles.
+                Sand warms the body for decadent comfort while stimulating the skin’s reflexes.
+                Sound from Tingsha bells set the tempo for the ultimate balance of mind, body, and soul.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <a class="btn btn-secondary" <%= link_to "Book a Appointment »", new_appointment_path %></a>
+        </div>
+    </div>
+</div>

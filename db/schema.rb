@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2020_04_17_030752) do
 
   create_table "treatments", force: :cascade do |t|
     t.string "title"
-    t.float "price"
-    t.float "duration"
+    t.string "price"
+    t.string "duration"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,0 +1,22 @@
+<h1>Creating New Treatment</h1>
+
+<%= form_for(@treatment) do |f| %>
+
+<br><br>
+<%= f.label :title %>
+<%= f.text_field :title, required:true %>
+<br><br>
+<%= f.label :price %>
+<%= f.text_field :price, required:true %>
+
+<br><br>
+<%= f.label :duration %>
+<%= f.text_field :duration, required:true %>
+
+<br><br>
+<%= f.label :description %>
+<%= f.text_field :description, required:true %>
+
+<br><br>
+<%= f.submit 'request treatment' %>
+<% end %>
