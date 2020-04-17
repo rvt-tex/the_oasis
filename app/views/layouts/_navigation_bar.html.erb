@@ -21,8 +21,8 @@
             </div>
         </div> 
     </nav>   
-<% else %>
-     <div class="collapse navbar-collapse" id="navbarResponsive">
+        <% else %>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" <%= link_to "Appointments", appointments_path %></a>
@@ -31,16 +31,15 @@
                         <a class="nav-link" <%= link_to "Treatments", treatments_path %></a>
                     </li>  
                     <li class="nav-item">
-                        <a class="nav-link" <%= link_to "New Appointment", new_appointment_path %></a></a>
+                        <a class="nav-link" <%= link_to "New Appointment", new_appointment_path %></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" <%= link_to "Reviews", reviews_path %></a>>
+                        <a class="nav-link" <%= link_to "Reviews", reviews_path %></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"<%= link_to('Logout', logout_path, method: :delete) %></a>
                     </li>
                 </ul>
-            </div>
-        </div> 
-    </nav>   
-<% end %>
+            </div> 
+        </nav>
+    <% end %>
