@@ -1,15 +1,14 @@
     
-    <%= render 'layouts/main_container'%>
-          <h2 class="card-title mt-3 text-center">Review Details</h2>
-
-            <h4><%= @review.appointment.treatment.title %></h4>
-            <h5><%= @review.comment%></h5>  <br> 
-            <h6> by: <%= @review.client.first_name.capitalize%></h6>
+<%= render 'layouts/main_container'%>
+  <h2 class="card-title mt-3 text-center">Review Details</h2>
+    <h4><%= @review.appointment.treatment.title %></h4>
+      <h5><%= @review.comment%></h5>  <br> 
+        <h6> by: <%= @review.client.first_name.capitalize%></h6>
           <br>
-          <div class="btn btn-light">
-		          <% if @review.client == current_client %>
-                <%= link_to "Edit Review", edit_review_path(@review)%> |
-                <%= link_to "delete Review", @review, method: :delete, data: { confirm: "Are you sure?" }%>
-              <% end %>
-     
-    <%= render 'layouts/main_container_footer'%>
+            <div class="btn btn-light">
+		            <% if @review.client == current_client %>
+                  <%= link_to "Edit Review", edit_review_path(@review)%> |
+                  <%= link_to "delete Review", @review, method: :delete, data: { confirm: "Are you sure?" }%>
+                <% end %>
+            </div>
+  <%= render 'layouts/main_container_footer'%>

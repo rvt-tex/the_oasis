@@ -1,22 +1,23 @@
  
-  <% if @appointment %>
-    <h2>Reviews for <%= @appointment.treatment.title%></h2>
-  <% else %>
+ 
+<% if @appointment %>
+  <h2>Reviews for <%= @appointment.treatment.title%></h2>
+<% else %>
 
-    <%= render 'layouts/main_container'%>
-              <h2 class="card-title mt-3 text-center">All Reviews</h2>
-              <ul>
-                  <% @reviews.each do |c|%>
-                <li><strong><%= c.appointment.treatment.title %></strong><br>
-                  Review By: <%= c.client.first_name %><br>
-                  "<%= c.comment%>" <br>
-                </li>
-                  <% end %>	
-              </ul>
-            <br><br>
-            <div class="btn btn-light"> 
-              <%= link_to "Write a Review »", new_review_path %>
-            </div>
-     <%= render 'layouts/main_container_footer'%>
-
-  <% end %>
+  <%= render 'layouts/main_container'%>
+    <h2 class="card-title mt-3 text-center">All Reviews</h2>
+      <ul>
+        <% @reviews.each do |c|%>
+          <li><strong><%= c.appointment.treatment.title %></strong><br>
+          written by: <%= c.client.first_name %><br>
+          "<%= c.comment%>" <br>
+          </li>
+        <% end %>	
+      </ul>
+    <br><br>
+      <div class="btn btn-light"> 
+        <%= link_to "Write a Review »", new_review_path %>
+      </div>
+  <%= render 'layouts/main_container_footer'%>
+  
+<% end %>

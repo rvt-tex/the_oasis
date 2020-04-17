@@ -2,10 +2,10 @@
 <%= form_for([@review.appointment,@review]) do |f|%>
 
 <% if !@review.appointment %>
-    <%= f.label :appointment %>
-    <%= f.collection_select :appointment_id, current_client.appointments.all, :id, :desired_date %>
+  <%= f.label :appointment %>
+  <%= f.collection_select :appointment_id, current_client.appointments.all, :id, :desired_date %>
 <% else %>
-    <%= f.hidden_field :appointment_id %>
+  <%= f.hidden_field :appointment_id %>
 <% end %>
 
 <br><br>
