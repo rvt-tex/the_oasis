@@ -1,0 +1,26 @@
+
+
+
+    <% if current_client %>
+     
+		  <%= render 'layouts/main_container'%>
+                <h2 class="card-title mt-3 text-center">Upcoming Appointments for <%= current_client.first_name %></h2>
+                
+                    <ul>
+                            <% current_client.appointments.each do |appointment| %>
+                        <li>
+                            <%= link_to appointment.treatment.title, appointment_path(appointment) %> 
+                        </li>
+                            <% end %>
+                        <br><br>
+                        <h5 class="card-title mt-3 text-center">We are looking forward to servicing you!!!</h5>
+                    </ul>
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <a class="btn btn-secondary" <%= link_to "Book a New Appointment »", new_client_appointment_path %></a>
+                            </div>
+                        </div>
+                    </div>
+                <%= render 'layouts/main_container_footer'%>
+    <% end %>

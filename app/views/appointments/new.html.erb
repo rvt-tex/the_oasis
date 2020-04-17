@@ -1,0 +1,8 @@
+
+ <%= render 'layouts/main_container'%>
+                <h3 class="card-title mt-3 text-center">Request Appointment</h3>
+
+                    <%= render partial: "layouts/errors", locals: {object: @appointment} %>
+                    <%= render partial: "form", locals: {appointment: @appointment} %>
+
+        <%= render 'layouts/main_container_footer'%>
