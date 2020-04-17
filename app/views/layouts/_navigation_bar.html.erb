@@ -25,13 +25,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" <%= link_to "Appointments", appointments_path %></a>
+                        <a class="nav-link" <%= link_to "Appointments", client_appointments_path(current_client) %></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" <%= link_to "Treatments", treatments_path %></a>
                     </li>  
                     <li class="nav-item">
-                        <a class="nav-link" <%= link_to "New Appointment", new_appointment_path %></a>
+                        <a class="nav-link" <%= link_to "New Appointment", new_client_appointment_path(current_client) %></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" <%= link_to "Reviews", reviews_path %></a>

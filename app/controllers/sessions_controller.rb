@@ -23,8 +23,9 @@ class SessionsController < ApplicationController
         client.first_name = auth["info"]["first_name"]
         client.last_name = auth["info"]["last_name"]
         client.password = SecureRandom.hex(10)
-        
+       
       end
+      #binding.pry
       if @client.save
         session[:client_id] = @client.id
         redirect_to client_path(@client)
