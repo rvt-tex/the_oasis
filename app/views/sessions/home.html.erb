@@ -1,2 +1,100 @@
 
-<h1>Welocme to the Home Page </h1>
+<div class="container-fluid">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+            </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/slider_bg.jpg" alt="slider" width="1200" height="500">
+            </div>
+        <div class="carousel-item">
+            <img src="/assets/spa_pool.JPG" alt="spa pool" width="1200" height="500">
+        </div>
+        </div>
+        <a class="carousel-control-prev"  data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+        </div>
+    </div>
+
+<br><br><br>
+   
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="/assets/facial.jpeg" alt="Generic placeholder image" width="140" height="140">
+            <h4>Treatments</h4>
+            <p>Indulge with the essential elements of wellness in unique treatments created for the Oasis Collection</p>
+            <p><a class="btn btn-secondary" <%= link_to "Treatments »", treatments_path %></a></p>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="/assets/lashes.jpeg" alt="Generic placeholder image" width="140" height="140">
+            <h4>Book A Treatment</h4>
+            <p>Resolve to revitalize with a relaxing, luxury experience at our oceanfront property.</p>
+            <p><a class="btn btn-secondary"<%= link_to "Book Treatment »", new_appointment_path %></a></p>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="/assets/massage.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h4>Reviews</h4>
+            <p>Exclusive beauty and wellness, treatments with trusted hands bring locals together for the most lux lifestyle trends.
+                Go and be pampered, as they help you relax.
+                <h6>Review by: Sam</h6>
+            </p>
+            <p><a class="btn btn-secondary" <%= link_to "Reviews »", reviews_path %></a></p>
+        </div>
+    </div>
+    </div>
+
+<hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>WELLNESS</h1>
+                <h3>THAT’S WELL OUT OF THE ORDINARY</h3>
+                <p>Introducing The Oasis at South Beach in Miami. Inspired by our surrounding environment, 
+                    each handcrafted practice focuses on the healing properties of Sea, Salt, Sand, and Sound. 
+                </p>
+            </div>
+        <div class="col-md-8">
+            <img src="/assets/Wellness.jpg" alt="wellness" width="800" height="400">
+        </div>
+    </div>
+    <hr>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>Contact Us</h4>
+              <p>The Oasis at South Beach <br>
+                200 N. Ocean Blvd. <br>
+                Miami, FL 33301 <br>
+                954 900 4065 
+              </p>
+          </div>
+          <div class="col-md-4">
+            <h4>Spa Hours</h4>
+            <p>Closed Mondays <br>
+                Tues & Wed  9:00am to 8:00pm <br>
+                Thurs to Sat 9:00am to 7:00pm <br>
+                Sun 9:00am to 5:00pm
+            </p>
+            
+          </div>
+        
+        <div class="col-md-4">
+            <div id="signup_footer" class="d-flex align-items-start">
+                <div class="form-group w-100 mr-2">
+                    <a class="btn btn-secondary" <%= link_to "Book Treatment »", new_appointment_path %></a> 
+                </div>
+                <div class="form-group w-100 mr-2">
+                    <a class="btn btn-secondary" <%= link_to "Write a Review »", new_review_path %></a> 
+                </div>
+            </div>
+        </div>
+    
+        

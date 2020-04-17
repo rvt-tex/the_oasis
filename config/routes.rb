@@ -12,6 +12,23 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#google'
 
+  resources :treatments, only: [:index, :show] do 
+    resources :appointments, only: [:index, :show]
+  end 
+
+  resources :clients do
+    resources :appointments #(shallow: true)
+  end 
+
+  resources :appointments
+  
+  resources :appointments do
+    resources :reviews
+  end
+  
+  resources :reviews
+  
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
