@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-    before_action :redirect_if_not_logged_in
+    before_action :login_required
     before_action :set_review, only: [:show, :edit, :update]
     before_action :redirect_if_not_review_owner, only: [:edit, :update]
 
