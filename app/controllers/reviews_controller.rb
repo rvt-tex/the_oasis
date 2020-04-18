@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
 
     def index 
+      #binding.pry
         if params[:appointment_id] && @appointment = Appointment.find_by_id(params[:appointment_id])
             @reviews = @appointment.reviews
         else
