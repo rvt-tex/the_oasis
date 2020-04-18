@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
         @client = Client.find_by(email:params[:client][:email])
         if @client && @client.authenticate(params[:client][:password])
             session[:client_id] = @client.id
-            #binding.pry
             redirect_to  @client
         else 
             flash[:message] = "Incorrect login info, please try again"
@@ -23,16 +22,14 @@ class SessionsController < ApplicationController
         client.first_name = auth["info"]["first_name"]
         client.last_name = auth["info"]["last_name"]
         client.password = SecureRandom.hex(10)
-       
-      end
-      #binding.pry
-      if @client.save
-        session[:client_id] = @client.id
-        redirect_to client_path(@client)
-      else
-        #binding.pry
-        redirect_to '/'
-      end
+        end
+    
+        if @client.save
+            session[:client_id] = @client.id
+            redirect_to client_path(@client)
+        else
+            redirect_to '/'
+        end
     end 
     
     def destroy 
