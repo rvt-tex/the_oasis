@@ -1,23 +1,23 @@
-<%= content_tag :div, class:"col-md-9" do %>
-  <%= render 'layouts/flash_message' %>
-  <% end %>
+    <%= content_tag :div, class:"col-md-9" do %>
+        <%= render 'layouts/flash_message' %>
+    <% end %>
   
     <%= render 'layouts/main_container'%>
-                <h2 class="card-title mt-3 text-center"><%= current_client.first_name %></h2>
-                <h3><%= display_appointments %></h3>
+        <h2 class="card-title mt-3 text-center"><%= current_client.first_name %></h2>
+            <h3><%= display_appointments %></h3>
                 
-                    <ul>
-                        <% @client.appointments.each do |appointment| %>
+                <ul>
+                    <% @client.appointments.each do |appointment| %>
                         <li><%= link_to appointment.treatment.title, client_appointment_path(@client,appointment) %></li>
-                        <% end %>
-                    </ul>
-                    <br><br>
-                    <h5 class="card-title mt-3 text-center">We are looking forward to servicing you!!!</h5>
-                    <div class="container mt-5">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <a class="btn btn-secondary" <%= link_to "Book a New Appointment »", new_appointment_path %></a>
-                            </div>
-                        </div>
+                    <% end %>
+                </ul>
+            <br><br>
+        <h5 class="card-title mt-3 text-center">We are looking forward to servicing you!!!</h5>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a class="btn btn-secondary" <%= link_to "Book a New Appointment »", new_appointment_path %></a>
                     </div>
-        <%= render 'layouts/main_container_footer'%>
+                </div>
+            </div>
+    <%= render 'layouts/main_container_footer'%>

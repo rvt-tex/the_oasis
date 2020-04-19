@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
 
     before_action :is_logged_in?
-    before_action :session_already_set, only: %i[new create]
+    before_action :session_already_set, only: [:new, :create]
 
     def index
     end

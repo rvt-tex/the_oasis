@@ -2,10 +2,10 @@
   <%= render 'layouts/main_container'%>
     <h2 class="card-title mt-3 text-center">All Reviews</h2>
       <ul>
-        <% @reviews.each do |c|%>
-          <li><strong><%= c.appointment.treatment.title %></strong><br>
-          written by: <%= c.client.first_name %><br>
-          "<%= c.comment%>" <br>
+        <% @reviews.each do |r|%>
+          <li><strong><%= r.appointment.treatment.title %></strong><br>
+          written by: <%= r.client.first_name %><br>
+          "<%= r.comment%>" <br>
           </li>
         <% end %>	
       </ul>
@@ -14,4 +14,7 @@
         <%= link_to "Write a Review »", new_review_path %>
       </div>
   <%= render 'layouts/main_container_footer'%>
+
+            
+
 
