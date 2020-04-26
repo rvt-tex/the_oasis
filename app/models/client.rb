@@ -14,10 +14,6 @@ class Client < ApplicationRecord
         joins(:appointments).where("appointments.created_at < ?", Time.now)
     end
 
-    def self.most_selected_treatment
-        joins(:appointments).group(:treatment_id).order("count(treatment_id) ASC").limit(3)
-    end
-
     def to_s
         self.first_name + " " + self.last_name
     end

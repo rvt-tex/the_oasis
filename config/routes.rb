@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/register', to: 'clients#new', as: 'register'
   resources :clients, only: [:create], path: 'register'
-  resources :clients, only: [:show, :index]
+  resources :clients, only: [:show]
   
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create' 
@@ -16,17 +16,17 @@ Rails.application.routes.draw do
     resources :appointments, only: [:index, :show]
   end 
 
-  resources :clients do
-    resources :appointments #(shallow: true)
+  resources :clients, except: [:edit, :update, :destroy] do
+    resources :appointments
   end 
 
   resources :appointments
   
   resources :appointments do
-    resources :reviews
+    resources :reviews, only: [:index]
   end
   
-  resources :reviews
+  resources :reviews, only: [:index, :new, :create] #shallow: true
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

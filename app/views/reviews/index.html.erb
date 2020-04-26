@@ -3,9 +3,11 @@
     <h2 class="card-title mt-3 text-center">All Reviews</h2>
       <ul>
         <% @reviews.each do |r|%>
-          <li><strong><%= r.appointment.treatment.title %></strong><br>
-          written by: <%= r.client.first_name %><br>
-          "<%= r.comment%>" <br>
+          <li><h3 style="font-family:Bradley Hand, cursive;"><%= r.appointment.treatment.title %></h3>
+            <p style="font-family:Apple Chancery, cursive;">
+              <%= r.comment%><br>
+              written by: <%= r.client.first_name %>
+            </p>
           </li>
         <% end %>	
       </ul>

@@ -4,6 +4,7 @@ class ClientsController < ApplicationController
     before_action :session_already_set, only: [:new, :create]
 
     def index
+        redirect_to '/'
     end
  
     def new 

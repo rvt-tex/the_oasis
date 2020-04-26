@@ -19,18 +19,4 @@ class Appointment < ApplicationRecord
 
   scope :alpha, -> { order(:desired_date) }
 
-  def appointment_count
-    @appointment_count ||= appointments.count
-  end
-
-  def one_review_per_appointment
-    today_review = client.reviews.select do |p|
-      p.created_at.try(:to_date) == Date.today
-    end
-    
-    if today_review.size > 1
-      errors.add(:review_id, " your only required to write one review per appoinment.")
-    end
-  end
-
 end

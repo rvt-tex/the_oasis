@@ -2,22 +2,12 @@ class ReviewsController < ApplicationController
 
   before_action :login_required
 
-  def index 
-    if params[:appointment_id] && @appointment = Appointment.find_by_id(params[:appointment_id])
-      @reviews = @appointment.reviews
-    else
-      @error = "That review doesn't exist" if params[:appointment_id]
-      @reviews = Review.all
-    end
+  def index   
+    @reviews = Review.all
   end 
 
   def new 
-    if params[:appointment_id] && @appointment = Appointment.find_by_id(params[:appointment_id])
-      @review = @appointment.reviews.build
-    else
-      @error = "That appointment doesn't exist" if params[:appointment_id]
-      @review = Review.new
-    end	
+    @review = Review.new
   end 
    
   def create

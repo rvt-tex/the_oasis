@@ -31,9 +31,4 @@ module ApplicationHelper
           yield
         end
     end
-
-    def owner 
-       if @client == current_client
-       end
-    end 
 end

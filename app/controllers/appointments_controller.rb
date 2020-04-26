@@ -2,23 +2,15 @@ class AppointmentsController < ApplicationController
 
   before_action :login_required
 
-  def index
-    if current_client == @client
-      @appointments = client.appointments
-    else 
-      @appointments = Appointment.all.alpha.includes(:client, :treatment)
-    end 
+  def index    
+    @appointments = current_client.appointments.alpha
   end
 
   def show
-    if current_client == @client
-      @appointment = client.appointments.find_by(id:params[:id])
+    @appointment = current_client.appointments.find_by(id:params[:id])
     if !@appointment
       flash[:alert] = "Appointment not found."
       redirect_to client_appointments_path(@client)
-    end
-    else
-      @appointment = Appointment.find(params[:id])
     end
   end
 
@@ -36,16 +28,11 @@ class AppointmentsController < ApplicationController
   end 
 
   def edit
-    if params[:client_id]
-      @client = Client.find_by(id:params[:client_id])
-    if @client
-      @appointment = client.appointments.find_by(id:params[:id])
+    if current_client
+      @appointment = current_client.appointments.find_by(id:params[:id])
       redirect_to client_appointments_path(@client) if !@appointment
     else
       redirect_to clients_path, alert: "Client not found"
-    end
-    else
-      @appointment = Appointment.find(params[:id])
     end
   end
 
@@ -60,7 +47,7 @@ class AppointmentsController < ApplicationController
   end 
   
   def destroy 
-    if is_logged_in? && @appointment = current_client.appointments.find_by_id(params[:id])
+    if @appointment = current_client.appointments.find_by_id(params[:id])
       @appointment.destroy
       redirect_to client_appointments_path(current_client) 
     else 
