@@ -16,7 +16,7 @@ class Appointment < ApplicationRecord
     errors.add(:desired_date, "can't be in the past")
     end
   end 
-
+  
   scope :alpha, -> { order(:desired_date) }
 
 end
