@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
 
   get '/auth/:provider/callback', to: 'sessions#google'
+
+  get '/most_popular_treatment/treatments/:id', to: 'treatments#show', as: 'most_popular_treatment'
  
   resources :treatments, only: [:index, :show] do 
     resources :appointments, only: [:index, :show]

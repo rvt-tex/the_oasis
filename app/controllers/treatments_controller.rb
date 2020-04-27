@@ -1,7 +1,7 @@
 class TreatmentsController < ApplicationController
 
     def index 
-        @treatment = Treatment.all
+        @treatment = Treatment.all.most_popular_treatment
     end 
 
     def show

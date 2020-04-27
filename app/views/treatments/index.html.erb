@@ -42,7 +42,7 @@
                 Sound from Tingsha bells set the tempo for the ultimate balance of mind, body, and soul.
 
                 <p><h5>Our most popular treatment is 
-                    "<%= Treatment.most_popular_treatment.title %>"</h5>
+                    "<%= link_to Treatment.most_popular_treatment.title, most_popular_treatment_path(@treatment) %>"</h5>
                 </p>
             </p>
         </div>
