@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :login_required
 
   def index    
-    @appointments = current_client.appointments.alpha
+    @appointments = current_client.appointments
   end
 
   def show

@@ -17,6 +17,4 @@ class Appointment < ApplicationRecord
     end
   end 
   
-  scope :alpha, -> { order(:desired_date) }
-
 end
