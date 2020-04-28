@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
     def login_required
         unless is_logged_in?
-            flash[:error] = "You must be logged inorder to make an appointment"
+            flash[:error] = "You must be logged in to complete the request"
             redirect_to login_path
         end
     end

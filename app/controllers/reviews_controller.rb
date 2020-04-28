@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :login_required
+  before_action :login_required, except: [:index]
 
   def index   
     @reviews = Review.all
