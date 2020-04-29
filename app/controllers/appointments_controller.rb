@@ -3,6 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :login_required
 
   def index    
+    #binding.pry
     @appointments = current_client.appointments
   end
 

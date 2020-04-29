@@ -3,7 +3,7 @@
 		  <%= render 'layouts/main_container'%>
                 <h2 class="card-title mt-3 text-center">Upcoming Appointments for <%= current_client.first_name %></h2>
                     <ul>
-                            <% current_client.appointments.each do |appointment| %>
+                            <% current_client.appointments.group(:desired_date).each do |appointment| %>
                         <li>
                             <%= link_to appointment.treatment.title, appointment_path(appointment)%> 
                         </li>
