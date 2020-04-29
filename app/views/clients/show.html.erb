@@ -6,7 +6,7 @@
         <h2 class="card-title mt-3 text-center"><%= current_client.first_name %></h2>
             <h3><%= display_appointments %></h3>
                 <ul>
-                    <% @client.appointments.each do |appointment| %>
+                    <% @client.appointments.group(:desired_date).each do |appointment| %>
                         <li><%= link_to appointment.treatment.title, client_appointment_path(@client,appointment) %></li>
                     <% end %>
                 </ul>
