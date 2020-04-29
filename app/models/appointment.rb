@@ -17,4 +17,7 @@ class Appointment < ApplicationRecord
     end
   end 
   
+  def self.earliest_time
+    group(:desired_date)
+  end 
 end
